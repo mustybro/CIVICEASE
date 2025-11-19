@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CivicEase — Queue & Appointment</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <header>
+    <h1>CivicEase — Book Appointment</h1>
+    <div class="header-actions">
+      <button id="themeToggle">☀️</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" id="bookingCard">
+      <h2>Book Appointment</h2>
+      <form id="bookingForm">
+        <input id="name" placeholder="Full name" required />
+        <input id="phone" placeholder="+2348123456789" required />
+        <select id="service" required>
+          <option value="">Select service</option>
+          <option value="NIN Enrollment">NIN Enrollment</option>
+          <option value="Passport">Passport</option>
+          <option value="Driver's License">Driver's License</option>
+          <option value="Hospital OPD">Hospital OPD</option>
+          <option value="Local Govt. Certificate">Local Govt. Certificate</option>
+        </select>
+        <input id="date" type="date" required />
+        <input id="time" type="time" required />
+        <button type="submit">Book & Get Queue</button>
+      </form>
+
+      <div id="result" class="hidden"></div>
+    </section>
+
+    <section class="card" id="searchCard">
+      <h2>Find / Search</h2>
+      <input id="search" placeholder="Search by name, phone, queue" />
+      <ul id="resultsList"></ul>
+    </section>
+
+    <section class="card" id="adminCard">
+      <h2>Admin — Queue Dashboard</h2>
+      <div class="admin-controls">
+        <button id="refreshQueue">Refresh</button>
+        <button id="callNext">Call Next</button>
+      </div>
+      <ul id="queueList"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
