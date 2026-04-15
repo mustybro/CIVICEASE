@@ -13,10 +13,22 @@ header{
   display:flex; align-items:center; justify-content:space-between;
   padding:18px 24px; background:#0b0c0f; border-bottom:1px solid #111;
 }
-h1{margin:0; font-size:18px}
-.header-actions button{padding:8px 10px;border-radius:8px;border:none;cursor:pointer;background:#111;color:#eee}
-main{display:grid; grid-template-columns:1fr 1fr; gap:18px; padding:20px; max-width:1100px; margin:20px auto}
+.brand-link, .nav-brand h1{
+  margin:0;
+  font-size:18px;
+  color:#fff;
+  text-decoration:none;
+}
+.nav-actions{display:flex; align-items:center; gap:10px}
+.nav-actions input{width:280px; margin:0; border-radius:16px; padding:10px 16px; border:1px solid rgba(255,255,255,0.4); background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(245,245,245,0.9)); color:#111; box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);}
+.nav-actions .button-link{display:inline-flex; align-items:center; justify-content:center; padding:10px 18px; border-radius:16px; background:linear-gradient(90deg,var(--accent),#6d5af0); color:white; text-decoration:none; border:none}
+.header-actions button,
+.nav-actions button{padding:8px 10px;border-radius:8px;border:none;cursor:pointer;background:#111;color:#eee}
+main{display:grid; grid-template-columns:1fr; gap:18px; padding:20px; max-width:1100px; margin:20px auto}
+.layout-grid{display:grid; grid-template-columns:1.2fr 0.9fr; gap:18px;}
 .card{background:var(--card); padding:18px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,0.6)}
+.half-card{min-height:calc(100vh - 170px)}
+.card-header{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
 .card h2{margin-top:0}
 input,select,button{display:block; width:100%; padding:10px; margin:8px 0; border-radius:8px; border:1px solid #222; background:#0f1012; color:#eee}
 button{cursor:pointer; background:linear-gradient(90deg,var(--accent),#6d5af0); color:white; border:none}
@@ -25,7 +37,22 @@ button:hover{opacity:0.95}
 #result{padding:12px; margin-top:10px; background:#081022; border-radius:8px}
 #queueList, #resultsList{list-style:none; padding:0; margin:0}
 #queueList li, #resultsList li{padding:10px; border-radius:8px; margin:8px 0; background:#0d0e11; display:flex; justify-content:space-between; align-items:center}
-.admin-controls{display:flex; gap:8px; margin-bottom:10px}
+.admin-controls{display:flex; gap:8px; margin-bottom:0}
+.admin-controls button{min-width:115px}
+body.light{background:#f4f6fb; color:#111}
+body.light header{background:#ffffff; border-bottom-color:#e0e4ee}
+body.light .card{background:#ffffff; color:#111}
+body.light input, body.light select, body.light button{background:#f7f8ff; color:#111; border-color:#d8dce9}
+body.light .nav-actions input{background:#111; color:#fff; border-color:#222}
+body.light .nav-actions input:hover{box-shadow: 0 0 8px rgba(120, 199, 255, 0.6);}
+body.light .button-link{background:var(--accent); color:#fff}
+body.light .header-actions button, body.light .nav-actions button{background:#e6e8f5; color:#111}
+.button-link:hover, .header-actions button:hover, .nav-actions button:hover{background:linear-gradient(90deg,#78c7ff,#68a9ff);}
+@media(max-width:1100px){
+  .layout-grid{grid-template-columns:1fr}
+}
 @media(max-width:900px){
-  main{grid-template-columns:1fr}
+  header{flex-direction:column; align-items:stretch; gap:12px}
+  .nav-actions{width:100%; flex-wrap:wrap; justify-content:flex-start}
+  .nav-actions input{width:100%}
 }

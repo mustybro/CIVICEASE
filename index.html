@@ -3,55 +3,108 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CivicEase — Queue & Appointment</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>CivicEase — Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .container {
+      text-align: center;
+      color: white;
+      padding: 40px;
+    }
+    
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.5;
+      }
+    }
+    
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      animation: slideInLeft 0.8s ease-out;
+    }
+    
+    p {
+      font-size: 0.95em;
+      margin-bottom: 15px;
+      opacity: 0.9;
+      animation: slideInLeft 0.8s ease-out 0.2s both;
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+    
+    .tagline {
+      font-size: 1em;
+      margin-bottom: 50px;
+      opacity: 0.9;
+      line-height: 1.6;
+      animation: slideInLeft 0.8s ease-out 0.4s both;
+    }
+    
+    a {
+      display: inline-block;
+      padding: 15px 40px;
+      background: white;
+      color: #667eea;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideInLeft 0.8s ease-out 0.6s both;
+    }
+    
+    a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
-<body class="dark">
-  <header>
-    <h1>CivicEase — Book Appointment</h1>
-    <div class="header-actions">
-      <button id="themeToggle">☀️</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="card" id="bookingCard">
-      <h2>Book Appointment</h2>
-      <form id="bookingForm">
-        <input id="name" placeholder="Full name" required />
-        <input id="phone" placeholder="+2348123456789" required />
-        <select id="service" required>
-          <option value="">Select service</option>
-          <option value="NIN Enrollment">NIN Enrollment</option>
-          <option value="Passport">Passport</option>
-          <option value="Driver's License">Driver's License</option>
-          <option value="Hospital OPD">Hospital OPD</option>
-          <option value="Local Govt. Certificate">Local Govt. Certificate</option>
-        </select>
-        <input id="date" type="date" required />
-        <input id="time" type="time" required />
-        <button type="submit">Book & Get Queue</button>
-      </form>
-
-      <div id="result" class="hidden"></div>
-    </section>
-
-    <section class="card" id="searchCard">
-      <h2>Find / Search</h2>
-      <input id="search" placeholder="Search by name, phone, queue" />
-      <ul id="resultsList"></ul>
-    </section>
-
-    <section class="card" id="adminCard">
-      <h2>Admin — Queue Dashboard</h2>
-      <div class="admin-controls">
-        <button id="refreshQueue">Refresh</button>
-        <button id="callNext">Call Next</button>
-      </div>
-      <ul id="queueList"></ul>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
+<body>
+  <div class="container">
+    <h1>CivicEase</h1>
+    <p>Document Services Made Easy</p>
+    <div class="tagline">TIRED OF WAITING LONG HOURS IN LINE TO GET YOUR NECESSARY DOUCMENT , BOOOK AN APPOINTENT AND GET IT DONE AT YOUR LEISURE TIME</div>
+    <a href="main.html">Get Started</a>
+  </div>
 </body>
 </html>
