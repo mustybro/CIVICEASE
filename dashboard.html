@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CivicEase - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="dashboard-shell">
+    <section class="phone-frame">
+      <div class="phone-screen">
+        <aside class="profile-sidebar" id="profileSidebar" aria-hidden="true">
+          <div class="sidebar-header">
+            <div>
+              <p class="sidebar-eyebrow">Citizen Profile</p>
+              <h2 id="sidebarUserName">Amara Okafor</h2>
+            </div>
+            <button id="closeSidebar" class="sidebar-close" type="button" aria-label="Close profile panel">X</button>
+          </div>
+
+          <section class="user-summary">
+            <div class="summary-avatar" id="sidebarAvatar">AO</div>
+            <div class="summary-copy">
+              <p class="summary-name" id="sidebarSummaryName">Amara Okafor</p>
+              <p class="summary-role" id="sidebarSummaryRole">Verified Resident</p>
+            </div>
+          </section>
+
+          <section class="sidebar-card">
+            <h3>Account Details</h3>
+            <dl class="detail-list">
+              <div>
+                <dt>Email</dt>
+                <dd id="sidebarEmail">amara.okafor@civicease.app</dd>
+              </div>
+              <div>
+                <dt>Phone</dt>
+                <dd id="sidebarPhone">+234 812 345 6789</dd>
+              </div>
+              <div>
+                <dt>Ward</dt>
+                <dd id="sidebarWard">Ikeja Central</dd>
+              </div>
+              <div>
+                <dt>Status</dt>
+                <dd id="sidebarStatus">Priority booking enabled</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="sidebar-card">
+            <div class="sidebar-section-heading">
+              <h3>Available Services</h3>
+              <span>Rendered list</span>
+            </div>
+            <ul id="sidebarServiceList" class="sidebar-service-list"></ul>
+          </section>
+        </aside>
+
+        <button id="sidebarBackdrop" class="sidebar-backdrop" type="button" aria-label="Close profile panel"></button>
+
+        <section class="services-panel hidden" id="servicesPanel" aria-hidden="true">
+          <div class="services-panel-header">
+            <div>
+              <p class="sidebar-eyebrow">All Services</p>
+              <h2>Available CivicEase Services</h2>
+            </div>
+            <button id="closeServicesPanel" class="sidebar-close" type="button" aria-label="Close services panel">X</button>
+          </div>
+          <div id="allServicesList" class="all-services-list"></div>
+        </section>
+
+        <header class="app-topbar">
+          <div class="status-row">
+            <span>9:41</span>
+            <div class="status-icons">
+              <span class="signal"></span>
+              <span class="battery"></span>
+            </div>
+          </div>
+
+          <div class="location-row">
+            <div>
+              <p class="eyebrow">Service Hub</p>
+              <h1><a class="brand-home" href="index.html">CivicEase</a></h1>
+            </div>
+            <div class="topbar-actions">
+              <button id="themeToggle" class="icon-button theme-toggle" type="button" aria-label="Switch to dark mode">Light</button>
+              <button id="profileToggle" class="profile-avatar" type="button" aria-label="Open profile panel">CE</button>
+            </div>
+          </div>
+
+          <label class="searchbar">
+            <span class="search-icon" aria-hidden="true">Q</span>
+            <input id="search" placeholder="Search for a service..." />
+          </label>
+        </header>
+
+        <section class="app-view active-view" data-view="home" id="homeView">
+          <section class="hero-card">
+            <div class="hero-copy">
+              <p class="hero-kicker">YOUR SOLUTION, ONE TAP AWAY!</p>
+              <p class="hero-text">Seamless, fast and reliable civic services at your fingertips.</p>
+              <button id="heroExplore" class="hero-button" type="button">Explore</button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="art-circle art-circle-a"></div>
+              <div class="art-circle art-circle-b"></div>
+              <div class="art-block art-block-a"></div>
+              <div class="art-block art-block-b"></div>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <div class="section-heading">
+              <h2>Service Categories</h2>
+              <button id="viewAllServices" class="text-action" type="button">View all</button>
+            </div>
+            <div class="category-grid">
+              <button class="category-card" type="button" data-service="NIN Enrollment">
+                <span class="category-icon">ID</span>
+                <span>NIN Enrollment</span>
+              </button>
+              <button class="category-card" type="button" data-service="Passport">
+                <span class="category-icon">PP</span>
+                <span>Passport</span>
+              </button>
+              <button class="category-card" type="button" data-service="Driver's License">
+                <span class="category-icon">DL</span>
+                <span>Driver's License</span>
+              </button>
+              <button class="category-card" type="button" data-service="Hospital OPD">
+                <span class="category-icon">MD</span>
+                <span>Hospital OPD</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="section-block">
+            <div class="section-heading">
+              <h2>Popular Services</h2>
+              <button class="text-action nav-action" type="button" data-target-view="queue">Go to queue</button>
+            </div>
+
+            <div class="service-grid">
+              <article class="service-card feature-service">
+                <div class="service-art"></div>
+                <div class="service-info">
+                  <p class="service-title">Citizen Queue</p>
+                  <p class="service-meta">Monitor your queue progress and manage appointments from one place.</p>
+                </div>
+              </article>
+
+              <article class="service-card quick-card">
+                <div class="service-info">
+                  <p class="service-title">Ready to book?</p>
+                  <p class="service-meta">Head to the Book tab to choose a service, date and preferred time.</p>
+                  <button class="inline-action nav-action" type="button" data-target-view="book">Open Book</button>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="app-view" data-view="book" id="bookView">
+          <section class="booking-card section-card" id="bookingCard">
+            <div class="section-heading">
+              <h2>Book Appointment</h2>
+              <span class="booking-pill">Fast track</span>
+            </div>
+            <p class="view-intro">Choose your service and preferred appointment slot here.</p>
+            <form id="bookingForm">
+              <input id="name" placeholder="Full name" required />
+              <input id="phone" placeholder="+2348123456789" required />
+              <select id="service" name="service" required>
+                <option value="">Select service</option>
+                <option value="NIN Enrollment">NIN Enrollment</option>
+                <option value="Passport">Passport</option>
+                <option value="Driver's License">Driver's License</option>
+                <option value="Hospital OPD">Hospital OPD</option>
+                <option value="Local Govt. Certificate">Local Govt. Certificate</option>
+                <option value="Certificate of Origin (Local Government)">Certificate of Origin (Local Government)</option>
+                <option value="Birth Certificate (NPC)">Birth Certificate (NPC)</option>
+                <option value="Permanent Voter's Card (PVC)">Permanent Voter's Card (PVC)</option>
+              </select>
+              <div class="form-row">
+                <input id="date" type="date" required />
+                <input id="time" type="time" required />
+              </div>
+              <button type="submit">Book & Get Queue</button>
+            </form>
+            <div id="result" class="hidden"></div>
+          </section>
+        </section>
+
+        <section class="app-view" data-view="queue" id="queueView">
+          <section class="section-card queue-section" id="adminCard">
+            <div class="section-heading">
+              <h2>Queue Dashboard</h2>
+              <div class="section-actions">
+                <button id="refreshQueue" class="text-action" type="button">Refresh</button>
+                <button id="callNext" class="text-action" type="button">Call Next</button>
+              </div>
+            </div>
+            <p class="view-intro">Track current appointments and mark completed visits from here.</p>
+            <ul id="queueList"></ul>
+          </section>
+        </section>
+
+        <section class="app-view" data-view="profile" id="profileView">
+          <section class="section-card profile-form-card">
+            <div class="section-heading">
+              <h2>User Details</h2>
+              <span class="booking-pill">Profile</span>
+            </div>
+            <p class="view-intro">Fill in your details once so your bookings and dashboard stay personalized.</p>
+            <form id="profileForm">
+              <input id="profileName" placeholder="Full name" required />
+              <input id="profileEmail" type="email" placeholder="Email address" required />
+              <input id="profilePhone" placeholder="+2348123456789" required />
+              <input id="profileWard" placeholder="Ward or local area" required />
+              <select id="profileStatus" required>
+                <option value="">Select status</option>
+                <option value="Verified Resident">Verified Resident</option>
+                <option value="Returning Applicant">Returning Applicant</option>
+                <option value="New Applicant">New Applicant</option>
+              </select>
+              <textarea id="profileAddress" rows="3" placeholder="Residential address"></textarea>
+              <button type="submit">Save Details</button>
+            </form>
+            <div id="profileResult" class="hidden"></div>
+          </section>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Primary">
+          <button class="nav-item active" type="button" data-view-target="home">Home</button>
+          <button class="nav-item" type="button" data-view-target="book">Book</button>
+          <button class="nav-item" type="button" data-view-target="queue">Queue</button>
+          <button class="nav-item" type="button" data-view-target="profile">Profile</button>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
