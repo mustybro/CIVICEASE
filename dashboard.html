@@ -20,9 +20,9 @@
           </div>
 
           <section class="user-summary">
-            <div class="summary-avatar" id="sidebarAvatar">AO</div>
+            <div class="summary-avatar" id="sidebarAvatar">PO</div>
             <div class="summary-copy">
-              <p class="summary-name" id="sidebarSummaryName">Amara Okafor</p>
+              <p class="summary-name" id="sidebarSummaryName">Raifu musta[ha</p>
               <p class="summary-role" id="sidebarSummaryRole">Verified Resident</p>
             </div>
           </section>
@@ -32,15 +32,15 @@
             <dl class="detail-list">
               <div>
                 <dt>Email</dt>
-                <dd id="sidebarEmail">amara.okafor@civicease.app</dd>
+                <dd id="sidebarEmail">raifuyemi@gmail.com</dd>
               </div>
               <div>
                 <dt>Phone</dt>
-                <dd id="sidebarPhone">+234 812 345 6789</dd>
+                <dd id="sidebarPhone">+234 9078614830</dd>
               </div>
               <div>
                 <dt>Ward</dt>
-                <dd id="sidebarWard">Ikeja Central</dd>
+                <dd id="sidebarWard">osogbo ward</dd>
               </div>
               <div>
                 <dt>Status</dt>
@@ -173,7 +173,8 @@
             <form id="bookingForm">
               <input id="name" placeholder="Full name" required />
               <input id="phone" placeholder="+2348123456789" required />
-              <select id="service" name="service" required>
+              <label for="service">services </label>
+              <select  id="service" name="service" required>
                 <option value="">Select service</option>
                 <option value="NIN Enrollment">NIN Enrollment</option>
                 <option value="Passport">Passport</option>
@@ -185,8 +186,10 @@
                 <option value="Permanent Voter's Card (PVC)">Permanent Voter's Card (PVC)</option>
               </select>
               <div class="form-row">
-                <input id="date" type="date" required />
-                <input id="time" type="time" required />
+                <label for="date">select date </label>
+                <input    id="date" type="date" required />
+                <label for="time"> select time</label>
+                <input   id="time" type="time" required />
               </div>
               <button type="submit">Book & Get Queue</button>
             </form>
@@ -220,7 +223,8 @@
               <input id="profileEmail" type="email" placeholder="Email address" required />
               <input id="profilePhone" placeholder="+2348123456789" required />
               <input id="profileWard" placeholder="Ward or local area" required />
-              <select id="profileStatus" required>
+              <label for="profileStatus">Status</label>
+              <select  id="profileStatus" required>
                 <option value="">Select status</option>
                 <option value="Verified Resident">Verified Resident</option>
                 <option value="Returning Applicant">Returning Applicant</option>

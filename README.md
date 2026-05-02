@@ -1,1 +1,2 @@
 # CIVICEASE
+this is a personal pr0ject detailing how a government services can be render availalbe online , uisng the existing works and maatching  with the advancment of tech , we can design and improve the quality of citizen life in respect to services render by the government , the project consist of a dynamic landing page ,and used react for the frontend , this entails all the code written in typescirpt . and used a javascript for the protoype backend . the project remain incompelred due to lack
